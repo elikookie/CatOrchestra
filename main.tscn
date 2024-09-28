@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvna1r1xv58v0"]
+
+[ext_resource type="PackedScene" uid="uid://c5s3bbi1v5g22" path="res://hallModel.scn" id="1_kobuw"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_k5jhy"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_68xwt"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="4_33qfv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ixy02"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_jxaff"]
+sky_material = SubResource("ProceduralSkyMaterial_ixy02")
+
+[sub_resource type="Environment" id="Environment_khll2"]
+background_mode = 2
+sky = SubResource("Sky_jxaff")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0629423, 0.240675, -0.200724)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_khll2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.289212, 11.1116, -3.17755)
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.752353, 10.782, -2.31851)
+tracker = &"left_hand"
+pose = &"aim"
+
+[node name="LeftHand" parent="XROrigin3D/LeftController" instance=ExtResource("2_k5jhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000211179, 0.0488081, -0.153888)
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.165323, 10.6451, -2.42545)
+tracker = &"right_hand"
+pose = &"aim"
+
+[node name="RightHand" parent="XROrigin3D/RightController" instance=ExtResource("3_68xwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037065, 0.182143, -0.316437)
+
+[node name="hallCol" parent="." instance=ExtResource("1_kobuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.139593, 8.98939, 1.25014)
+
+[node name="StartXR" parent="." instance=ExtResource("4_33qfv")]
