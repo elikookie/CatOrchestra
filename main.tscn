@@ -29,12 +29,13 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1655, 0)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.289212, 11.1116, -3.17755)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.289212, -0.545995, -3.17755)
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.752353, 10.782, -2.31851)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.752353, -0.684476, -2.31851)
 tracker = &"left_hand"
 pose = &"aim"
 
@@ -42,7 +43,7 @@ pose = &"aim"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000211179, 0.0488081, -0.153888)
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.165323, 10.6451, -2.42545)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.165323, -0.821378, -2.42545)
 tracker = &"right_hand"
 pose = &"aim"
 
