@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvna1r1xv58v0"]
+[gd_scene load_steps=11 format=3 uid="uid://dvna1r1xv58v0"]
 
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_7debl"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_k7w2l"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="3_14aga"]
 [ext_resource type="PackedScene" uid="uid://cehx7eycgnex3" path="res://models/sci_fi_space_station.tscn" id="4_5nbcu"]
 [ext_resource type="PackedScene" uid="uid://c5s3bbi1v5g22" path="res://models/capsule.scn" id="5_rk1if"]
+[ext_resource type="PackedScene" uid="uid://cp8q6autyiogd" path="res://models/drums.tscn" id="6_qcl3b"]
+[ext_resource type="Script" path="res://models/drums.gd" id="7_lptff"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wf54u"]
 sky_top_color = Color(0.0917439, 0.199518, 0.469172, 1)
@@ -37,7 +39,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681016, 25.1348, -102.651)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.03995, 2.40354, 7.14045)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.733059, 2.40354, 7.14045)
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.752353, -0.684476, -2.31851)
@@ -62,3 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.601319, 32.5457, -29.1072)
 
 [node name="spawnCapsule" parent="." instance=ExtResource("5_rk1if")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0846618, 24.6714, -106.125)
+
+[node name="Drums" parent="." instance=ExtResource("6_qcl3b")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.17222, 23.9795, -87.8479)
+script = ExtResource("7_lptff")
