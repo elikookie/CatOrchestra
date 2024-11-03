@@ -1,11 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvna1r1xv58v0"]
+[gd_scene load_steps=12 format=3 uid="uid://dvna1r1xv58v0"]
 
-[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_7debl"]
-[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_k7w2l"]
+[ext_resource type="PackedScene" uid="uid://b38pk73cqvfme" path="res://scenes/player.tscn" id="2_t7034"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="3_14aga"]
-[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_vaith"]
 [ext_resource type="PackedScene" uid="uid://cehx7eycgnex3" path="res://models/sci_fi_space_station.tscn" id="4_5nbcu"]
-[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_ylpur"]
 [ext_resource type="PackedScene" uid="uid://c5s3bbi1v5g22" path="res://models/capsule.scn" id="5_rk1if"]
 [ext_resource type="PackedScene" uid="uid://cp8q6autyiogd" path="res://models/drums.tscn" id="6_qcl3b"]
 [ext_resource type="Script" path="res://models/drums.gd" id="7_lptff"]
@@ -26,11 +23,19 @@ sky = SubResource("Sky_6hne1")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4yum0"]
-size = Vector2(20, 90)
+[sub_resource type="PlaneMesh" id="PlaneMesh_yqt62"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mo3og"]
+points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0629423, -25.7593, 73.7993)
+
+[node name="StartXR" parent="." instance=ExtResource("3_14aga")]
+
+[node name="Player" parent="." instance=ExtResource("2_t7034")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 26.2852, -97)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_72jnk")
@@ -40,48 +45,24 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="Player" type="XROrigin3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681016, 37.5566, -102.651)
-
-[node name="XRCamera3D" type="XRCamera3D" parent="Player"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.733059, 2.40354, 7.14045)
-
-[node name="LeftController" type="XRController3D" parent="Player"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.752353, -0.684476, -2.31851)
-tracker = &"left_hand"
-pose = &"aim"
-
-[node name="LeftHand" parent="Player/LeftController" instance=ExtResource("1_7debl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000211179, 0.0488081, -0.153888)
-
-[node name="RightController" type="XRController3D" parent="Player"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.165323, -0.821378, -2.42545)
-tracker = &"right_hand"
-pose = &"aim"
-
-[node name="RightHand" parent="Player/RightController" instance=ExtResource("2_k7w2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037065, 0.182143, -0.316437)
-
-[node name="FunctionTeleport" parent="Player/RightController" instance=ExtResource("3_vaith")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037065, 0.182142, -0.316437)
-player_height = 1.7
-player_radius = 0.25
-
-[node name="PlayerBody" parent="Player/RightController" instance=ExtResource("4_ylpur")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9265, -30)
-
-[node name="StartXR" parent="." instance=ExtResource("3_14aga")]
-
 [node name="Sci-Fi Space Station" parent="." instance=ExtResource("4_5nbcu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.601319, 32.5457, -29.1072)
+visible = false
 
 [node name="spawnCapsule" parent="." instance=ExtResource("5_rk1if")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0846618, 24.6714, -106.125)
+visible = false
 
 [node name="Drums" parent="." instance=ExtResource("6_qcl3b")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.17222, 23.9795, -87.8479)
+transform = Transform3D(-0.799791, 0, 0.0183033, 0, 0.8, 0, -0.0183033, 0, -0.799791, 0.17222, 24.7191, -87.8479)
 script = ExtResource("7_lptff")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.898971, 24.1524, -75.5174)
-mesh = SubResource("PlaneMesh_4yum0")
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.1611, -90.3858)
+mesh = SubResource("PlaneMesh_yqt62")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.1611, -90.3858)
+shape = SubResource("ConvexPolygonShape3D_mo3og")
