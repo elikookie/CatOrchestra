@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvna1r1xv58v0"]
+[gd_scene load_steps=11 format=3 uid="uid://dvna1r1xv58v0"]
 
 [ext_resource type="PackedScene" uid="uid://b38pk73cqvfme" path="res://scenes/player.tscn" id="2_t7034"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="3_14aga"]
-[ext_resource type="PackedScene" uid="uid://cehx7eycgnex3" path="res://models/sci_fi_space_station.tscn" id="4_5nbcu"]
-[ext_resource type="PackedScene" uid="uid://c5s3bbi1v5g22" path="res://models/capsule.scn" id="5_rk1if"]
+[ext_resource type="PackedScene" uid="uid://dhfbh1jjtqo5f" path="res://models/sequencer.tscn" id="5_gsv7f"]
 [ext_resource type="PackedScene" uid="uid://cp8q6autyiogd" path="res://models/drums.tscn" id="6_qcl3b"]
 [ext_resource type="Script" path="res://models/drums.gd" id="7_lptff"]
 
@@ -45,14 +44,6 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="Sci-Fi Space Station" parent="." instance=ExtResource("4_5nbcu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.601319, 32.5457, -29.1072)
-visible = false
-
-[node name="spawnCapsule" parent="." instance=ExtResource("5_rk1if")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0846618, 24.6714, -106.125)
-visible = false
-
 [node name="Drums" parent="." instance=ExtResource("6_qcl3b")]
 transform = Transform3D(-0.799791, 0, 0.0183033, 0, 0.8, 0, -0.0183033, 0, -0.799791, 0.17222, 24.7191, -87.8479)
 script = ExtResource("7_lptff")
@@ -66,3 +57,6 @@ mesh = SubResource("PlaneMesh_yqt62")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.1611, -90.3858)
 shape = SubResource("ConvexPolygonShape3D_mo3og")
+
+[node name="sequencer" parent="." instance=ExtResource("5_gsv7f")]
+transform = Transform3D(1, 0, 0, 0, 0.658829, 0, 0, 0, 0.690407, 2.43741, 25.1824, -89.6479)
