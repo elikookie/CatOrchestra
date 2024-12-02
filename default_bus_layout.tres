@@ -1,9 +1,123 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://pfqs5mj824oj"]
+[gd_resource type="AudioBusLayout" load_steps=19 format=3 uid="uid://pfqs5mj824oj"]
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_acngo"]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_qdso5"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_3irxf"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_kbset"]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_r7qkt"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_b3wu0"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_ebgn2"]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_v3p7k"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_mbs2b"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_xss7t"]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_dr4fq"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_jonbl"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_udpy7"]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_hatc2"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_bmam3"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_hmysr"]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_hld3s"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_wlrbh"]
+resource_name = "PitchShift"
 
 [resource]
+bus/0/effect/0/effect = SubResource("AudioEffectDistortion_acngo")
+bus/0/effect/0/enabled = false
+bus/0/effect/1/effect = SubResource("AudioEffectReverb_qdso5")
+bus/0/effect/1/enabled = false
+bus/0/effect/2/effect = SubResource("AudioEffectPitchShift_3irxf")
+bus/0/effect/2/enabled = false
 bus/1/name = &"DrumSounds"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = 0.0
 bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectDistortion_kbset")
+bus/1/effect/0/enabled = false
+bus/1/effect/1/effect = SubResource("AudioEffectReverb_r7qkt")
+bus/1/effect/1/enabled = false
+bus/1/effect/2/effect = SubResource("AudioEffectPitchShift_b3wu0")
+bus/1/effect/2/enabled = false
+bus/2/name = &"YeeHaw"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectDistortion_ebgn2")
+bus/2/effect/0/enabled = false
+bus/2/effect/1/effect = SubResource("AudioEffectReverb_v3p7k")
+bus/2/effect/1/enabled = false
+bus/2/effect/2/effect = SubResource("AudioEffectPitchShift_mbs2b")
+bus/2/effect/2/enabled = false
+bus/3/name = &"Ding"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectDistortion_xss7t")
+bus/3/effect/0/enabled = false
+bus/3/effect/1/effect = SubResource("AudioEffectReverb_dr4fq")
+bus/3/effect/1/enabled = false
+bus/3/effect/2/effect = SubResource("AudioEffectPitchShift_jonbl")
+bus/3/effect/2/enabled = false
+bus/4/name = &"Yoink"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectDistortion_udpy7")
+bus/4/effect/0/enabled = false
+bus/4/effect/1/effect = SubResource("AudioEffectReverb_hatc2")
+bus/4/effect/1/enabled = false
+bus/4/effect/2/effect = SubResource("AudioEffectPitchShift_bmam3")
+bus/4/effect/2/enabled = false
+bus/5/name = &"BipBipBop"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectDistortion_hmysr")
+bus/5/effect/0/enabled = false
+bus/5/effect/1/effect = SubResource("AudioEffectReverb_hld3s")
+bus/5/effect/1/enabled = false
+bus/5/effect/2/effect = SubResource("AudioEffectPitchShift_wlrbh")
+bus/5/effect/2/enabled = false

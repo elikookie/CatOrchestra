@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="3_14aga"]
 [ext_resource type="PackedScene" uid="uid://dhfbh1jjtqo5f" path="res://models/sequencer.tscn" id="5_gsv7f"]
 [ext_resource type="PackedScene" uid="uid://cp8q6autyiogd" path="res://models/drums.tscn" id="6_qcl3b"]
-[ext_resource type="Script" path="res://models/drums.gd" id="7_lptff"]
+[ext_resource type="Script" path="res://scripts/drums.gd" id="7_lptff"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wf54u"]
 sky_top_color = Color(0.0917439, 0.199518, 0.469172, 1)
