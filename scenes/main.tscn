@@ -75,7 +75,7 @@ shape = SubResource("ConvexPolygonShape3D_mo3og")
 transform = Transform3D(1, 0, 0, 0, 0.658829, 0, 0, 0, 0.690407, 2.43741, 25.1824, -89.6479)
 
 [node name="PickableObject" parent="." instance=ExtResource("6_81ca4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.880345, 28.8249, -90.0807)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.880345, 26.427, -90.0807)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject"]
 mesh = SubResource("CapsuleMesh_2rhsx")
