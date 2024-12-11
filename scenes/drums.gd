@@ -17,51 +17,51 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	animationPlayer.play("floortomHIT")
 
 func _on_area_3d_hatFD_entered(body: Node3D) -> void:
-	var AudioPlayer = get_node("Drums/Hat_001/Area3D/AudioStreamPlayer3D")
-	var animationPlayer = get_node("Drums/AnimationPlayer")
+	var AudioPlayer = get_node("Hat_001/Area3D/AudioStreamPlayer3D")
+	var animationPlayer = get_node("AnimationPlayer")
 	AudioPlayer.play()
 	animationPlayer.play("Hat001HIT")
 
 func _on_Hat3_body_entered(body: Node3D) -> void:
-	var AudioPlayer = get_node("Drums/Hat_003/Area3D/AudioStreamPlayer3D")
-	var animationPlayer = get_node("Drums/AnimationPlayer")
+	var AudioPlayer = get_node("Hat_003/Area3D/AudioStreamPlayer3D")
+	var animationPlayer = get_node("AnimationPlayer")
 	AudioPlayer.play()
 	animationPlayer.play("Hat_003HIT")
 
 func _on_Hat2_3d_body_entered(body: Node3D) -> void:
-	var AudioPlayer = get_node("Drums/Hat_002/Area3D/AudioStreamPlayer3D")
-	var animationPlayer = get_node("Drums/AnimationPlayer")
+	var AudioPlayer = get_node("Hat_002/Area3D/AudioStreamPlayer3D")
+	var animationPlayer = get_node("AnimationPlayer")
 	AudioPlayer.play()
 	animationPlayer.play("Hat002HIT")
 
 func _on_area_hat_3d_body_entered(body: Node3D) -> void:
-	var AudioPlayer = get_node("Drums/Hat/Area3D/AudioStreamPlayer3D")
-	var animationPlayer = get_node("Drums/AnimationPlayer")
+	var AudioPlayer = get_node("Hat/Area3D/AudioStreamPlayer3D")
+	var animationPlayer = get_node("AnimationPlayer")
 	AudioPlayer.play()
 	animationPlayer.play("HatHIT")
 
 func _on_area_Tomtom1_3d_body_entered(body: Node3D) -> void:
-	var AudioPlayer = get_node("Drums/Tomtom1/Area3D/AudioStreamPlayer3D")
-	var animationPlayer = get_node("Drums/AnimationPlayer")
+	var AudioPlayer = get_node("Tomtom1/Area3D/AudioStreamPlayer3D")
+	var animationPlayer = get_node("AnimationPlayer")
 	AudioPlayer.play()
 	animationPlayer.play("Tomtom1HIT")
 
 func _on_area_Tomtom2_3d_body_entered(body: Node3D) -> void:
-	var AudioPlayer = get_node("Drums/Tomtom2/Area3D/AudioStreamPlayer3D")
-	var animationPlayer = get_node("Drums/AnimationPlayer")
+	var AudioPlayer = get_node("Tomtom2/Area3D/AudioStreamPlayer3D")
+	var animationPlayer = get_node("AnimationPlayer")
 	AudioPlayer.play()
 	animationPlayer.play("Tomtom2HIT")
 
 
 func _on_area_kickdrum3d_body_entered(body: Node3D) -> void:
-	var AudioPlayer = get_node("Drums/KickDrum/Area3D/AudioStreamPlayer3D")
-	var animationPlayer = get_node("Drums/AnimationPlayer")
+	var AudioPlayer = get_node("KickDrum/Area3D/AudioStreamPlayer3D")
+	var animationPlayer = get_node("AnimationPlayer")
 	AudioPlayer.play()
 	animationPlayer.play("kickdrumHIT")
 
 
 func _on_area_snare_3d_body_entered(body: Node3D) -> void:
-	var AudioPlayer = get_node("Drums/Snare/Area3D/AudioStreamPlayer3D")
-	var animationPlayer = get_node("Drums/AnimationPlayer")
+	var AudioPlayer = get_node("Snare/Area3D/AudioStreamPlayer3D")
+	var animationPlayer = get_node("AnimationPlayer")
 	AudioPlayer.play()
 	animationPlayer.play("SnareActionHIT")
