@@ -1,0 +1,227 @@
+[gd_scene load_steps=21 format=3 uid="uid://b2wid74xjglu7"]
+
+[ext_resource type="Script" path="res://scripts/h_slider.gd" id="1_g3bg3"]
+[ext_resource type="Script" path="res://scripts/pitch.gd" id="2_4y5kv"]
+[ext_resource type="Script" path="res://scripts/distortion.gd" id="3_gwlk3"]
+[ext_resource type="Script" path="res://scripts/check_button.gd" id="4_n20p0"]
+[ext_resource type="Script" path="res://models/meowSound.gd" id="5_ri2pq"]
+[ext_resource type="AudioStream" uid="uid://b6g2cj6wdv4d2" path="res://sounds/yeehaw.mp3" id="6_qij32"]
+[ext_resource type="Script" path="res://models/volumeYehaw.gd" id="7_ac8y1"]
+[ext_resource type="Script" path="res://models/pitchYehaw.gd" id="8_wds3l"]
+[ext_resource type="Script" path="res://models/distortionYH.gd" id="9_0imqa"]
+[ext_resource type="Script" path="res://models/check_buttonYehaw.gd" id="10_t3ef3"]
+[ext_resource type="Script" path="res://scripts/ding.gd" id="11_uyuwy"]
+[ext_resource type="AudioStream" uid="uid://cvy80ar30p4wv" path="res://sounds/Dingg.mp3" id="12_wskme"]
+[ext_resource type="Script" path="res://scripts/yoink.gd" id="13_q8plx"]
+[ext_resource type="AudioStream" uid="uid://c3gdg0hujv8fg" path="res://sounds/yoink.mp3" id="14_tqb3s"]
+[ext_resource type="Script" path="res://scripts/bipbipbop.gd" id="15_ry7xo"]
+[ext_resource type="AudioStream" uid="uid://b563sux6grpoj" path="res://sounds/BipBopBip.mp3" id="16_y083n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r6kf2"]
+font_color = Color(1, 0.211765, 1, 1)
+outline_size = 10
+
+[sub_resource type="Theme" id="Theme_g8u8e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rpyri"]
+font_color = Color(1, 0, 1, 1)
+outline_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqydv"]
+font_color = Color(1, 0, 1, 1)
+outline_size = 10
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.994
+anchor_bottom = 0.986
+offset_right = -0.0880127
+offset_bottom = 0.0719604
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.73271e-06, 0.793815, 0.793953, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -444.5
+offset_top = -539.0
+offset_right = 444.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Volume" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Volume"]
+layout_mode = 2
+text = "Volume     "
+label_settings = SubResource("LabelSettings_r6kf2")
+uppercase = true
+
+[node name="volume" type="HSlider" parent="VBoxContainer/Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.73
+theme = SubResource("Theme_g8u8e")
+min_value = -45.0
+max_value = 0.0
+script = ExtResource("1_g3bg3")
+
+[node name="Pitch" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/Pitch"]
+layout_mode = 2
+text = "Pitch          "
+label_settings = SubResource("LabelSettings_rpyri")
+uppercase = true
+
+[node name="pitch" type="HSlider" parent="VBoxContainer/Pitch"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.1
+max_value = 4.0
+step = 0.1
+value = 0.1
+script = ExtResource("2_4y5kv")
+
+[node name="Dist" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Dist"]
+layout_mode = 2
+text = "Distortion"
+label_settings = SubResource("LabelSettings_xqydv")
+
+[node name="distortion" type="CheckButton" parent="VBoxContainer/Dist"]
+layout_mode = 2
+script = ExtResource("3_gwlk3")
+
+[node name="Reverb" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="reverb" type="Label" parent="VBoxContainer/Reverb"]
+layout_mode = 2
+text = "Reverb"
+label_settings = SubResource("LabelSettings_xqydv")
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/Reverb"]
+layout_mode = 2
+script = ExtResource("4_n20p0")
+
+[node name="soundButtons" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Yehaw" type="VBoxContainer" parent="VBoxContainer/soundButtons"]
+layout_mode = 2
+
+[node name="yeehaw" type="Button" parent="VBoxContainer/soundButtons/Yehaw"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "YEEHAW"
+script = ExtResource("5_ri2pq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/soundButtons/Yehaw/yeehaw"]
+stream = ExtResource("6_qij32")
+
+[node name="Volume" type="HBoxContainer" parent="VBoxContainer/soundButtons/Yehaw"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/soundButtons/Yehaw/Volume"]
+layout_mode = 2
+text = "V"
+label_settings = SubResource("LabelSettings_r6kf2")
+uppercase = true
+
+[node name="volume" type="HSlider" parent="VBoxContainer/soundButtons/Yehaw/Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.73
+theme = SubResource("Theme_g8u8e")
+min_value = -45.0
+max_value = 0.0
+script = ExtResource("7_ac8y1")
+
+[node name="Pitch" type="HBoxContainer" parent="VBoxContainer/soundButtons/Yehaw"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/soundButtons/Yehaw/Pitch"]
+layout_mode = 2
+text = "P"
+label_settings = SubResource("LabelSettings_rpyri")
+uppercase = true
+
+[node name="pitch" type="HSlider" parent="VBoxContainer/soundButtons/Yehaw/Pitch"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.1
+max_value = 4.0
+step = 0.1
+value = 0.1
+script = ExtResource("8_wds3l")
+
+[node name="Dist" type="HBoxContainer" parent="VBoxContainer/soundButtons/Yehaw"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/soundButtons/Yehaw/Dist"]
+layout_mode = 2
+text = "Distortion"
+label_settings = SubResource("LabelSettings_xqydv")
+
+[node name="distortion" type="CheckButton" parent="VBoxContainer/soundButtons/Yehaw/Dist"]
+layout_mode = 2
+script = ExtResource("9_0imqa")
+
+[node name="Reverb" type="HBoxContainer" parent="VBoxContainer/soundButtons/Yehaw"]
+layout_mode = 2
+
+[node name="reverb" type="Label" parent="VBoxContainer/soundButtons/Yehaw/Reverb"]
+layout_mode = 2
+text = "Reverb     "
+label_settings = SubResource("LabelSettings_xqydv")
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/soundButtons/Yehaw/Reverb"]
+layout_mode = 2
+script = ExtResource("10_t3ef3")
+
+[node name="ding" type="Button" parent="VBoxContainer/soundButtons"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "DING"
+script = ExtResource("11_uyuwy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/soundButtons/ding"]
+stream = ExtResource("12_wskme")
+
+[node name="yoink" type="Button" parent="VBoxContainer/soundButtons"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "Yoink"
+script = ExtResource("13_q8plx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/soundButtons/yoink"]
+stream = ExtResource("14_tqb3s")
+
+[node name="Bipbipbop" type="Button" parent="VBoxContainer/soundButtons"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "BipBipBop"
+script = ExtResource("15_ry7xo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/soundButtons/Bipbipbop"]
+stream = ExtResource("16_y083n")

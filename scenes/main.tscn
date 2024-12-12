@@ -948,6 +948,23 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.0333333, 1, 0.0229815, -0.0110835, 0.00140562, 0.999673, 0.0666667, 1, 0.0606143, -0.0291017, 0.00497764, 0.997725, 0.1, 1, 0.0932033, -0.0446243, 0.00872545, 0.994608, 0.133333, 1, 0.109332, -0.0488251, 0.00918928, 0.992763, 0.166667, 1, 0.105723, -0.0334169, 0.00143077, 0.993833, 0.2, 1, 0.0949057, 0.00080588, -0.0150957, 0.995372, 0.233333, 1, 0.0795003, 0.0354768, -0.0307115, 0.99573, 0.266667, 1, 0.0612976, 0.0611262, -0.0411779, 0.995395, 0.3, 1, 0.0422976, 0.0698533, -0.0427996, 0.995741, 0.333333, 1, 0.0246033, 0.0552661, -0.032377, 0.997643, 0.366667, 1, 0.0108579, 0.0267144, -0.0152655, 0.999468, 0.4, 1, 0.00296767, 0.00782843, -0.00439381, 0.999955, 0.416667, 1, 0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_qgasu"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("floortom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.260227, 0.260227, 0.260227)
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KickDrum")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.452449, 0.452449, 0.452449)
+
 [sub_resource type="Animation" id="Animation_fh4nq"]
 resource_name = "SnareActionHIT"
 length = 0.291667
@@ -1226,23 +1243,6 @@ tracks/0/path = NodePath("floortom_001")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0.730783, 0.80764, 1.05595, 0.0333333, 1, 0.730783, 0.802423, 1.05595, 0.0666667, 1, 0.730783, 0.793851, 1.05595, 0.1, 1, 0.730783, 0.786398, 1.05595, 0.166667, 1, 0.730783, 0.786415, 1.05595, 0.233333, 1, 0.730783, 0.800251, 1.05595, 0.266667, 1, 0.730783, 0.805282, 1.05595, 0.291667, 1, 0.730783, 0.80764, 1.05595)
-
-[sub_resource type="Animation" id="Animation_qgasu"]
-length = 0.001
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("floortom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.260227, 0.260227, 0.260227)
-tracks/1/type = "scale_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("KickDrum")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0.452449, 0.452449, 0.452449)
 
 [sub_resource type="Animation" id="Animation_wejrw"]
 resource_name = "kickdrumHIT"

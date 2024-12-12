@@ -3,7 +3,7 @@ extends CheckButton
 func _toggled(toggled_on):
 	var effect = AudioServer.get_bus_effect(2, 0)
 	if effect and effect is AudioEffectDistortion:
-		AudioServer.set_bus_effect_enabled(0, 1, toggled_on)
+		AudioServer.set_bus_effect_enabled(2, 0, toggled_on)
 	else:
 		print("Error: Effect is not a reverb effect or does not exist.")
 	
