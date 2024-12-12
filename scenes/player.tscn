@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b38pk73cqvfme"]
+[gd_scene load_steps=8 format=3 uid="uid://b38pk73cqvfme"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_7208x"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_jeou8"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pointer.gd" id="2_lu184"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_y4j5q"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_digkj"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_skse0"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_mtgne"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_tumnh"]
 
 [node name="Player" type="XROrigin3D"]
 
@@ -16,14 +17,13 @@ tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftHandController" instance=ExtResource("1_7208x")]
 
-[node name="XRToolsFunctionPointer" type="Node3D" parent="LeftHandController"]
-script = ExtResource("2_lu184")
+[node name="FunctionPickup" parent="LeftHandController" instance=ExtResource("2_y4j5q")]
+
+[node name="FunctionPointer" parent="LeftHandController" instance=ExtResource("3_digkj")]
 active_button_action = "ax_button"
 show_laser = 2
 laser_length = 1
-collision_mask = 5242944
-
-[node name="FunctionPickup" parent="LeftHandController" instance=ExtResource("2_y4j5q")]
+show_target = true
 
 [node name="RightHandController" type="XRController3D" parent="."]
 tracker = &"right_hand"
@@ -36,5 +36,7 @@ player_height = 1.7
 player_radius = 0.25
 
 [node name="FunctionPickup" parent="RightHandController" instance=ExtResource("2_y4j5q")]
+
+[node name="MovementTurn" parent="RightHandController" instance=ExtResource("5_tumnh")]
 
 [node name="PlayerBody" parent="." instance=ExtResource("4_mtgne")]
