@@ -1284,7 +1284,7 @@ points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vhbs8"]
 radius = 0.02
-height = 0.4
+height = 0.7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u7h8"]
 albedo_color = Color(0, 1, 1, 1)
@@ -1297,7 +1297,7 @@ emission_energy_multiplier = 3.38
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2rhsx"]
 material = SubResource("StandardMaterial3D_2u7h8")
 radius = 0.02
-height = 0.4
+height = 0.7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxia1"]
 
@@ -1539,6 +1539,7 @@ transform = Transform3D(1, 0, 0, 0, 0.658829, 0, 0, 0, 0.690407, 2.179, 25.1862,
 [node name="PickableObject" parent="." instance=ExtResource("6_81ca4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97161, 26.427, -90.857)
 collision_layer = 7
+picked_up_layer = 65543
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
 shape = SubResource("CapsuleShape3D_vhbs8")
@@ -1549,6 +1550,7 @@ mesh = SubResource("CapsuleMesh_2rhsx")
 [node name="PickableObject2" parent="." instance=ExtResource("6_81ca4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.960598, 26.4431, -91.026)
 collision_layer = 7
+picked_up_layer = 65543
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject2"]
 shape = SubResource("CapsuleShape3D_vhbs8")
@@ -1559,6 +1561,7 @@ mesh = SubResource("CapsuleMesh_2rhsx")
 [node name="PickableObject3" parent="." instance=ExtResource("6_81ca4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.947432, 26.427, -91.3263)
 collision_layer = 7
+picked_up_layer = 65543
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject3"]
 shape = SubResource("CapsuleShape3D_vhbs8")
@@ -1569,6 +1572,7 @@ mesh = SubResource("CapsuleMesh_2rhsx")
 [node name="PickableObject4" parent="." instance=ExtResource("6_81ca4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.948031, 26.4417, -91.4645)
 collision_layer = 7
+picked_up_layer = 65543
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject4"]
 shape = SubResource("CapsuleShape3D_vhbs8")
@@ -1579,6 +1583,7 @@ mesh = SubResource("CapsuleMesh_2rhsx")
 [node name="PickableObject5" parent="." instance=ExtResource("6_81ca4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2769, 26.427, -90.857)
 collision_layer = 7
+picked_up_layer = 65543
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject5"]
 shape = SubResource("CapsuleShape3D_vhbs8")
@@ -1589,6 +1594,7 @@ mesh = SubResource("CapsuleMesh_2rhsx")
 [node name="PickableObject6" parent="." instance=ExtResource("6_81ca4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26589, 26.4431, -91.026)
 collision_layer = 7
+picked_up_layer = 65543
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject6"]
 shape = SubResource("CapsuleShape3D_vhbs8")
@@ -1599,6 +1605,7 @@ mesh = SubResource("CapsuleMesh_2rhsx")
 [node name="PickableObject7" parent="." instance=ExtResource("6_81ca4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25273, 26.427, -91.3263)
 collision_layer = 7
+picked_up_layer = 65543
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject7"]
 shape = SubResource("CapsuleShape3D_vhbs8")
@@ -1609,6 +1616,7 @@ mesh = SubResource("CapsuleMesh_2rhsx")
 [node name="PickableObject8" parent="." instance=ExtResource("6_81ca4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25333, 26.4417, -91.4645)
 collision_layer = 7
+picked_up_layer = 65543
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject8"]
 shape = SubResource("CapsuleShape3D_vhbs8")
